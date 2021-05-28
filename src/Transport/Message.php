@@ -20,7 +20,7 @@ class Message
      * @param $to
      * @param $from
      */
-    public function __construct($body, $to, $from, $title, $layout = '/../Layouts/register.php')
+    public function __construct($body, $to, $from, $title, $layout = '../Layouts/register.php')
     {
         $this->layout = $layout;
         $this->body = $body;

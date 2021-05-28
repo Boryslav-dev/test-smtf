@@ -4,7 +4,7 @@ namespace src\Transport;
 
 class Message
 {
-    protected $body;
+    public $body;
 
     protected $to;
 
@@ -12,7 +12,7 @@ class Message
 
     protected $title;
 
-    protected $layout;
+    public $layout;
 
     /**
      * Message constructor.
@@ -99,12 +99,5 @@ class Message
         $var = ob_get_contents();
         ob_end_clean();
         return $var;
-    }
-
-    public function sendMail()
-    {
-        $this->body = $this->renderView($this->layout, $this->body);
-        $mail = new MailTransport();
-        $mail->send($this);
     }
 }

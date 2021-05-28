@@ -12,6 +12,24 @@ use Swift_SmtpTransport;
 
 class MailTransport implements Transportinterface
 {
+    public $transport;
+
+    /**
+     * MailTransport constructor.
+     * @param $transport
+     */
+    public function setConfig(ConfigAdapter $config)
+    {
+        $this->transport = (new Swift_SmtpTransport(
+            $config->getHost(),
+            $config->getPort(),
+            $config->getEnc()
+            ,))
+            ->setUsername($config->getUsername())
+            ->setPassword($config->getPassword())
+        ;
+    }
+
     public function send(Message $message): bool
     {
         $log = new Logger('Mailer');
@@ -26,19 +44,8 @@ class MailTransport implements Transportinterface
 //        $log->warning('Warning');
 //        $log->error('Error');
 
-        $config = json_decode(file_get_contents(__DIR__ . '/../../config/config.txt'), true);
-
-        $transport = (new Swift_SmtpTransport(
-            $config['host'],
-            $config['port'],
-            $config['encryption']
-        ,))
-            ->setUsername($config['username'])
-            ->setPassword($config['password'])
-        ;
-
         // Create the Mailer using your created Transport
-        $mailer = new Swift_Mailer($transport);
+        $mailer = new Swift_Mailer($this->transport);
 
         // Create a message
         $message = (new Swift_Message($message->getTitle()))

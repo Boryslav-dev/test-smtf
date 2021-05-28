@@ -95,7 +95,7 @@ class Message
     public function renderView($layout, $body)
     {
         ob_start();
-        include $layout;
+        include __DIR__ . $layout;
         $var = ob_get_contents();
         ob_end_clean();
         return $var;

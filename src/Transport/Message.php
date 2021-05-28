@@ -20,7 +20,7 @@ class Message
      * @param $to
      * @param $from
      */
-    public function __construct($body, $to, $from, $title, $layout = 'src/Layouts/register.php')
+    public function __construct($body, $to, $from, $title, $layout = '/../Layouts/register.php')
     {
         $this->layout = $layout;
         $this->body = $body;
@@ -95,7 +95,7 @@ class Message
     public function renderView($layout, $body)
     {
         ob_start();
-        include __DIR__ . '/../' . $layout;
+        include $layout;
         $var = ob_get_contents();
         ob_end_clean();
         return $var;

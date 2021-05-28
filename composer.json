@@ -1,0 +1,21 @@
+{
+    "name": "kuchkov/test-smtf",
+    "description": "This is Swift Mailer handler",
+    "require": {
+        "swiftmailer/swiftmailer": "6.2.x-dev",
+        "monolog/monolog": "2.x-dev",
+        "ext-json": "*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Boryslav",
+            "email": "kuchkovborislav000@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "src\\Transport\\": "src/Transport"
+        }
+    }
+}

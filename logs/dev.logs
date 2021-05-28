@@ -1,0 +1,4 @@
+{"message":"Warning","context":{},"level":300,"level_name":"WARNING","channel":"Mailer","datetime":"2021-05-27T23:03:15.764074+03:00","extra":{}}
+{"message":"Error","context":{},"level":400,"level_name":"ERROR","channel":"Mailer","datetime":"2021-05-27T23:03:15.764649+03:00","extra":{}}
+{"message":"Warning","context":{},"level":300,"level_name":"WARNING","channel":"Mailer","datetime":"2021-05-27T23:03:36.722738+03:00","extra":{}}
+{"message":"Error","context":{},"level":400,"level_name":"ERROR","channel":"Mailer","datetime":"2021-05-27T23:03:36.722934+03:00","extra":{}}

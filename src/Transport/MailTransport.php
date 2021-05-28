@@ -18,13 +18,13 @@ class MailTransport implements Transportinterface
 
         $formater = new JsonFormatter();
 
-        $stream = new StreamHandler(__DIR__ . '/../../logs/dev.logs');
-        $stream->setFormatter($formater);
-
-        $log->pushHandler($stream);
-
-        $log->warning('Warning');
-        $log->error('Error');
+//        $stream = new StreamHandler(__DIR__ . '/../../logs/dev.logs');
+//        $stream->setFormatter($formater);
+//
+//        $log->pushHandler($stream);
+//
+//        $log->warning('Warning');
+//        $log->error('Error');
 
         $config = json_decode(file_get_contents(__DIR__ . '/../../config/config.txt'), true);
 

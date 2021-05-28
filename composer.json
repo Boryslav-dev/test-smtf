@@ -15,7 +15,8 @@
     ],
     "autoload": {
         "psr-4": {
-            "src\\Transport\\": "src/Transport"
+            "src\\Transport\\": "src/Transport",
+            "src\\Layouts\\": "src/Layouts"
         }
     }
 }
